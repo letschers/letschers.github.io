@@ -1,0 +1,21 @@
+const draw_ally_info_skillbar = (num) => {
+
+    document.getElementById("skills-bar").style.visibility = "visible";
+
+    for (let i = 0; i < 4; i++) {
+        document.getElementById("skill-" + (i + 1)).style.backgroundImage = "url('./assets/" + ally_players[num].name + "/skill-" + (i + 1) + ".png')";
+
+    }
+
+    for (let i = 0; i < ally_players.length; i++) {
+
+        if (ally_players[i]["name"] != next_player["name"]) {
+            document.getElementById("player-" + (i + 1)).style.filter = "brightness(50%)";
+
+        }
+    }
+
+    for (let i = 0; i < enemy_players.length; i++) {
+        document.getElementById("enemy-" + (i + 1)).style.filter = "brightness(50%)";
+    }
+}
